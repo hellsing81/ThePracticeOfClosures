@@ -15,7 +15,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App p-4">
+    <div className='App p-4'>
       <h1 className='text-2xl font-bold mb-4'>Интерактивная практика замыканий</h1>
       <CodeEditor code={code} onChange={setCode} />
       <button className='mt-4 bg-blue-500 text-white px-4 py-2 rounded' onClick={handleExecuteCode}>
@@ -23,5 +23,6 @@ const App: React.FC = () => {
       </button>
     </div>
   );
+
 };
 export default App;
