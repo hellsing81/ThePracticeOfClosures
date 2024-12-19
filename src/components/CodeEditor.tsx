@@ -11,7 +11,13 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange }) => {
 
   useEffect(() => {
     if (editorRef.current) {
-      editorRef.current.setValue(code);
+      const model = editorRef.current.getModel();
+      if (model) {
+        const value = editorRef.current.getValue();
+        if (value !== code) {
+          model.setValue(code);
+        }
+      }
     }
   }, [code]);
 
