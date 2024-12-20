@@ -8,10 +8,14 @@ const App: React.FC = () => {
   const [code, setCode] = useState('');
 
   return (
-    <div className='App p-4'>
-      <h1 className='text-2xl font-bold mb-4'>Интерактивная практика замыканий</h1>
+    <div className='App p-4 flex'>
+      <div className='editor-container'>
       <CodeEditor code={code} onChange={setCode} />
+      </div>
+      <div className='visualizer-container'>
       <ClosureVisualizer code={code}/>
+
+      </div>
     </div>
   );
     

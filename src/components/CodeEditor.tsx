@@ -37,7 +37,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange }) => {
     };
   }, []);
 
-  return <div id="editor" style={{ height: '400px', width: '100%' }}></div>;
+  return <div id="editor" style={{ height: '55vh', width: '55vh' }}></div>;
 };
 
 export default CodeEditor;

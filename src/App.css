@@ -6,7 +6,24 @@
 }
 
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.editor-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.visualizer-container {
+  flex: 1;
+}
+
+#editor {
+  height: 100%;
+  width: 100%;
+  text-align: left; 
 }
 
 .logo {
