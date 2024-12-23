@@ -5,10 +5,29 @@
   text-align: center;
 }
 
+
 .App {
   display: flex;
   flex-direction: row;
   height: 100vh;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1));
+  color: white;
+}
+
+.editor-container, .visualizer-container {
+  transition: transform 0.2s ease-in-out;
+}
+
+.editor-container:hover, .visualizer-container:hover {
+  transform: scale(1.01);
+}
+
+button {
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .editor-container {
@@ -33,10 +52,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #edd7bb);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #edd7bb);
 }
 
 @keyframes logo-spin {
