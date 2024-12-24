@@ -7,7 +7,7 @@ import ClosureVisualizer from './components/ClosureVisualizer';
 const App: React.FC = () => {
   const [code, setCode] = useState('');
   const [theme, setTheme] = useState('vs-dark');
-
+  const [history, setHistory] = useState<{ code:string; output: string; }[]>([])
   const toggleTheme =  () => { 
       setTheme(theme === 'vs-dark' ? 'vs' : 'vs-dark')
   }
@@ -22,6 +22,25 @@ const App: React.FC = () => {
       setCode(savedCode);
     }
   };
+  const executeCode = (code: string)=>{
+    try {
+      const result = eval(code);
+      const output = JSON.stringify(result,null,2);
+      setHistory([...history, {code, output}]);
+      return output;
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        const output = `Error: ${error.message}`;
+        setHistory([...history,{code, output}]);
+        return output;
+      } else {
+        const output = `Error: ${String(error)}`;
+        setHistory([...history, {code, output}]);
+        return output;
+      }
+    }
+
+  }
 
   useEffect(() => {
     loadCode();
@@ -44,7 +63,16 @@ const App: React.FC = () => {
             Load Code
           </button>
         </div>
-        <ClosureVisualizer code={code} />
+        <ClosureVisualizer code={code} executeCode={executeCode} />
+        <div className="mt-4">
+          <h2 className="text-lg font-bold mb-2">История выполнения:</h2>
+          {history.map((entry, index) => (
+            <div key={index} className="mb-2 p-2 bg-black-500 rounded">
+              <pre className="text-sm">{entry.code}</pre>
+              <pre className="text-sm font-bold">{entry.output}</pre>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
