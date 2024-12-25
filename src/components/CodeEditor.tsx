@@ -5,9 +5,10 @@ interface CodeEditorProps {
   code: string;
   onChange: (code: string) => void;
   theme: string;
+  language: string;
 }
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange, theme }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange, theme , language }) => {
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange, theme }) => {
   useEffect(() => {
     editorRef.current = monaco.editor.create(document.getElementById('editor')!, {
       value: code,
-      language: 'javascript',
+      language: language,
       theme: theme,
       automaticLayout: true,
       wordWrap: 'on',
@@ -50,7 +51,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange, theme }) => {
     return () => {
       editorRef.current?.dispose();
     };
-  }, [theme]);
+  }, [theme, language]);
 
   return <div id="editor" style={{ height: '55vh', width: '55vh' }}></div>;
 };
