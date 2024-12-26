@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CodeEditor from './components/CodeEditor';
 import './App.css';
 import ClosureVisualizer from './components/ClosureVisualizer';
+import Documentation from './components/Documentation';
 
 
 const App: React.FC = () => {
@@ -88,6 +89,7 @@ const App: React.FC = () => {
             </div>
           ))}
         </div>
+        <Documentation/>
       </div>
     </div>
   );
