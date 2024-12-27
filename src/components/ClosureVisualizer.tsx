@@ -20,7 +20,7 @@ const ClosureVisualizer: React.FC<ClosureVisualizerProps> = ({ code, executeCode
   return (
     <div className="p-4">
       <button className="bg-black-500 text-white px-4 py-2 rounded-full transition-transform transform hover:scale-110" onClick={handleExecuteCode}>
-        Execute Code
+        Выполнить
       </button>
       <pre className="mt-4 bg-black-500 text-white p-4 rounded">{output}</pre>
       <CallStackVisualizer callStack={callStack} />

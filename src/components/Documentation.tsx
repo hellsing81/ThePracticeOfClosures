@@ -3,7 +3,7 @@ import React from 'react';
 const Documentation: React.FC = () => {
     return (
         <div className="p-4 bg-gray-700 text-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4">Documentation</h2>
+        <h2 className="text-2xl font-bold mb-4">Документация</h2>
         <p className="mb-4">
           Замыкания (closures) — это функции, которые запоминают и имеют доступ к переменным из своей области видимости, даже если эти функции выполняются вне этой области видимости.
         </p>

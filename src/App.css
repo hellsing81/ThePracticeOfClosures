@@ -6,43 +6,22 @@
 }
 
 
-.App {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1));
-  color: white;
-}
 
-.editor-container, .visualizer-container {
+
+.editor-container, .visualizer-container, .documentation-container, .tests-container {
   transition: transform 0.2s ease-in-out;
 }
 
-.editor-container:hover, .visualizer-container:hover {
+.editor-container:hover, .visualizer-container:hover, .documentation-container:hover, .tests-container:hover {
   transform: scale(1.01);
 }
 
 button {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 button:hover {
   transform: scale(1.1);
-}
-
-.editor-container {
-  flex: 1;
-  margin-right: 20px;
-}
-
-.visualizer-container {
-  flex: 1;
-}
-
-#editor {
-  height: 100%;
-  width: 100%;
-  text-align: left; 
 }
 
 .logo {
